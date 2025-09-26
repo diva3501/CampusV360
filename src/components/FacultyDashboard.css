@@ -1,0 +1,210 @@
+
+.faculty-dashboard-container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+.dashboard-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+}
+.card-header {
+  font-size: 20px;
+  font-weight: 600;
+  color: #212529;
+  margin: 0 0 24px 0;
+}
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+.tabs-container {
+  display: flex;
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 32px;
+}
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #4b5563;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.tab-button:hover {
+  background-color: #f8f9fa;
+  color: #111827;
+}
+.tab-button.active {
+  color: #16a34a;
+  border-bottom-color: #16a34a;
+  background-color: #f0fdf4;
+}
+
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+
+.summary-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e9ecef;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+.summary-title { font-size: 14px; font-weight: 500; color: #6c757d; margin: 0; }
+.summary-value { font-size: 32px; font-weight: 700; margin-top: 4px; }
+.summary-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.summary-icon span { font-size: 24px; }
+
+
+.submission-item {
+  padding: 16px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+}
+.submission-item--urgent {
+  border-color: #fecaca;
+  background-color: #fef2f2;
+}
+.submission-item > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.submission-student { font-weight: 500; }
+.submission-activity { font-size: 14px; color: #6c757d; }
+.submission-time { font-size: 12px; color: #adb5bd; margin-top: 2px; }
+.submission-actions { display: flex; gap: 8px; }
+.button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.button--approve { background-color: #22c55e; }
+.button--approve:hover { background-color: #16a34a; }
+.button--reject { background-color: #ef4444; }
+.button--reject:hover { background-color: #dc2626; }
+
+.urgent-badge {
+  margin-top: 8px;
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+
+.quick-action-button {
+  width: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+.quick-action-button:hover {
+  filter: brightness(1.1);
+}
+.quick-action-count {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+.button--blue { background-color: #3b82f6; }
+.button--green { background-color: #22c55e; }
+.button--purple { background-color: #a855f7; }
+.button--gray { background-color: #6b7280; }
+
+
+.empty-state {
+  text-align: center;
+  padding: 32px;
+  color: #6c757d;
+}
+
+
+@media (max-width: 1024px) {
+  .summary-grid, .main-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

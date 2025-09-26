@@ -1,8 +1,25 @@
-/* General Navbar Styles */
+
+
+
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #a855f7;
+  --primary-gradient: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --bg-light: #f9fafb;
+  --border-color: #e5e7eb;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
 .navbar {
   background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border-bottom: 4px solid #3b82f6;
+  box-shadow: var(--shadow-lg);
+ 
+  border-bottom: 4px solid transparent;
+  border-image: var(--primary-gradient) 1;
 }
 
 .navbar-container {
@@ -15,92 +32,60 @@
   height: 80px;
 }
 
-/* Left Side: Back Button & Title */
-.navbar-left {
+
+.navbar-left, .navbar-title-group, .navbar-right {
   display: flex;
   align-items: center;
   gap: 16px;
-}
-
-.navbar-title-group {
-  display: flex;
-  align-items: center;
 }
 
 .navbar-logo {
   width: 48px;
   height: 48px;
-  background: linear-gradient(to right, #3b82f6, #a855f7);
+  background: var(--primary-gradient);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 16px;
+  margin-right: 12px;
   flex-shrink: 0;
 }
+.navbar-logo span { font-size: 24px; color: white; }
+.navbar-title { font-size: 22px; font-weight: bold; color: var(--text-primary); margin: 0; }
+.navbar-subtitle { font-size: 14px; color: var(--text-secondary); margin: 0; }
 
-.navbar-logo span {
-  font-size: 24px;
-  color: white;
-}
 
-.navbar-title {
-  font-size: 22px;
-  font-weight: bold;
-  color: #111827;
-  margin: 0;
-}
-
-.navbar-subtitle {
-  font-size: 14px;
-  color: #6b7280;
-  margin: 0;
-}
-
-/* Right Side: Actions & User Profile */
-.navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-/* Icon Buttons (Back, Notifications, Settings) */
 .icon-button {
   display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 12px;
-  color: #4b5563;
+  color: var(--text-secondary);
   background-color: transparent;
   border: none;
-  border-radius: 12px;
+  border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
 }
+.icon-button svg { width: 24px; height: 24px; }
 
-.icon-button svg {
-  width: 24px;
-  height: 24px;
-}
 
 .icon-button:hover {
-  color: #3b82f6;
+  color: var(--primary-color);
   background-color: #eff6ff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .back-button:hover {
   color: #ffffff;
-  background-color: #3b82f6;
+  background-color: var(--primary-color);
 }
 
-/* Notification Badge */
+
 .notification-badge {
   position: absolute;
-  top: 4px;
-  right: 4px;
-  width: 20px;
-  height: 20px;
+  top: 4px; right: 4px;
+  width: 20px; height: 20px;
   background-color: #ef4444;
   color: white;
   font-size: 12px;
@@ -109,73 +94,86 @@
   align-items: center;
   justify-content: center;
   font-weight: 500;
+  border: 2px solid white;
+  animation: pulsate 1.5s infinite;
 }
 
-/* User Profile Section */
+
+.user-profile-wrapper { position: relative; }
 .user-profile {
   display: flex;
   align-items: center;
-  background: linear-gradient(to right, #f9fafb, #f3f4f6);
-  border-radius: 12px;
-  padding: 8px;
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: 9999px;
+  padding: 6px 12px 6px 6px;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
-
 .user-profile:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-md);
+  border-color: #d1d5db;
 }
-
 .user-profile-icon {
-  width: 48px;
-  height: 48px;
+  width: 40px; height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
 }
+.user-profile-icon span { color: white; font-size: 20px; }
+.user-welcome { font-size: 14px; font-weight: 600; color: var(--text-primary); margin: 0; }
+.user-role { font-size: 12px; color: var(--text-secondary); text-transform: capitalize; margin: 0; }
 
-.user-profile-icon span {
-  color: white;
-  font-size: 20px;
+
+.profile-dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 200px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  z-index: 10;
+  animation: fadeInDown 0.2s ease-out;
 }
-
-.user-welcome {
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-primary);
   font-size: 14px;
-  font-weight: 600;
-  color: #1f2937;
-  margin: 0;
+  transition: background-color 0.2s ease;
+}
+.dropdown-item:hover { background-color: var(--bg-light); }
+.dropdown-divider { height: 1px; background-color: var(--border-color); margin: 8px 0; }
+.dropdown-item--logout { color: #ef4444; }
+.dropdown-item--logout:hover { background-color: #fee2e2; }
+
+
+@keyframes pulsate {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
 }
 
-.user-role {
-  font-size: 12px;
-  color: #4b5563;
-  text-transform: capitalize;
-  margin: 0;
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
-  .navbar-container {
-    padding: 0 16px;
-    height: 72px;
-  }
-  .user-profile-text {
-    display: none; /* Hide text on smaller screens */
-  }
-  .user-profile {
-    padding: 4px;
-    background: none;
-  }
-  .user-profile-icon {
-    margin-right: 0;
-  }
-  .navbar-subtitle {
-    display: none;
-  }
-  .navbar-title {
-    font-size: 18px;
-  }
+  .navbar-container { height: 72px; padding: 0 16px; }
+  .user-profile-text, .navbar-subtitle { display: none; }
+  .user-profile { padding: 6px; }
+  .user-profile-icon { margin-right: 0; }
+  .navbar-title { font-size: 18px; }
 }

@@ -3,30 +3,56 @@ import './ApprovalPanel.css';
 
 const ApprovalPanel = () => {
   const [submissions, setSubmissions] = useState([
-    { id: 1, student: { name: 'Alice Johnson', rollNumber: 'CS21B045' }, activity: { title: 'Machine Learning Specialization', type: 'MOOC', date: '2025-09-15', institution: 'Coursera', expectedCredits: 3, description: 'Completed comprehensive ML course...' }, submittedDate: '2025-09-16', status: 'pending', priority: 'high', documents: ['certificate.pdf'] },
-    { id: 2, student: { name: 'Bob Smith', rollNumber: 'CS21B028' }, activity: { title: 'Summer Internship at Microsoft', type: 'Internship', date: '2025-09-10', institution: 'Microsoft', expectedCredits: 4, description: 'Three-month internship in the Azure team...' }, submittedDate: '2025-09-12', status: 'under_review', priority: 'high', documents: ['certificate.pdf', 'report.pdf'] },
-    { id: 3, student: { name: 'Carol Davis', rollNumber: 'CS21B067' }, activity: { title: 'IEEE Conference Paper', type: 'Conference', date: '2025-09-08', institution: 'IEEE', expectedCredits: 3, description: 'Presented research paper on network security...' }, submittedDate: '2025-09-09', status: 'pending', priority: 'medium', documents: ['certificate.pdf'] }
+    { id: 1, student: { name: 'Priya Sharma', rollNumber: 'CS21B045' }, activity: { title: 'Machine Learning Specialization', type: 'MOOC', date: '2025-09-15', institution: 'Coursera', expectedCredits: 3, description: 'Completed a comprehensive Machine Learning course covering supervised, unsupervised, and deep learning models.' }, submittedDate: '2025-09-16', status: 'pending', priority: 'high', documents: ['certificate.pdf'] },
+    { id: 2, student: { name: 'Rohan Mehta', rollNumber: 'CS21B028' }, activity: { title: 'Summer Internship at Jio', type: 'Internship', date: '2025-09-10', institution: 'Jio Platforms', expectedCredits: 4, description: 'Three-month internship in the Cloud Engineering team, focusing on Kubernetes and microservices architecture.' }, submittedDate: '2025-09-12', status: 'under_review', priority: 'high', documents: ['internship_certificate.pdf', 'project_report.pdf'] },
+    { id: 3, student: { name: 'Anjali Desai', rollNumber: 'CS21B067' }, activity: { title: 'Paper on AI Ethics at IEEE', type: 'Conference', date: '2025-09-08', institution: 'IEEE India', expectedCredits: 3, description: 'Presented a research paper titled "Ethical Frameworks for AI in Autonomous Systems" at an international conference.' }, submittedDate: '2025-09-09', status: 'pending', priority: 'medium', documents: ['conference_certificate.pdf'] }
   ]);
   const [selectedSubmission, setSelectedSubmission] = useState(null);
   const [reviewComment, setReviewComment] = useState('');
   const [awardedCredits, setAwardedCredits] = useState('');
+  const [approvedTodayCount, setApprovedTodayCount] = useState(0);
+
+  const [notification, setNotification] = useState({
+    show: false,
+    message: '',
+    type: '' // 'success' or 'error'
+  });
+
+  const showNotification = (message, type) => {
+    setNotification({ show: true, message, type });
+    setTimeout(() => {
+      setNotification({ show: false, message: '', type: '' });
+    }, 4000);
+  };
 
   const handleApprove = (submissionId) => {
-    
-    alert('Activity Approved!');
+    const submission = submissions.find(s => s.id === submissionId);
+    if (!submission) return;
+
+    setSubmissions(prev => prev.map(sub => 
+      sub.id === submissionId ? { ...sub, status: 'approved' } : sub
+    ));
+    setApprovedTodayCount(prev => prev + 1);
+    showNotification(`Activity for ${submission.student.name} approved successfully!`, 'success');
     resetReviewForm();
   };
+
   const handleReject = (submissionId) => {
-    
-    alert('Activity Rejected!');
+    const submission = submissions.find(s => s.id === submissionId);
+    if (!submission) return;
+
+    setSubmissions(prev => prev.map(sub => 
+      sub.id === submissionId ? { ...sub, status: 'rejected' } : sub
+    ));
+    showNotification(`Activity for ${submission.student.name} has been rejected.`, 'error');
     resetReviewForm();
   };
+
   const resetReviewForm = () => {
     setSelectedSubmission(null);
     setReviewComment('');
     setAwardedCredits('');
   };
-  
   
   const getStatusClass = (status) => `badge--${status.replace('_', '-')}`;
   const getPriorityClass = (priority) => `priority--${priority}`;
@@ -42,13 +68,19 @@ const ApprovalPanel = () => {
 
   return (
     <div className="approval-panel-container fade-in">
+      {notification.show && (
+        <div className={`notification notification--${notification.type}`}>
+          {notification.message}
+        </div>
+      )}
+
       {/* Statistics */}
       <div className="summary-grid">
         {[
           { title: 'Pending Review', value: submissions.filter(s => s.status === 'pending').length, icon: '⏳', color: 'yellow' },
-          { title: 'Under Review', value: submissions.filter(s => s.status === 'under_review').length, icon: '👀', color: 'blue' },
-          { title: 'Approved Today', value: 0, icon: '✅', color: 'green' }, 
-          { title: 'High Priority', value: submissions.filter(s => s.priority === 'high').length, icon: '🔥', color: 'red' }
+          { title: 'Under Review', value: submissions.filter(s => s.status === 'under_review').length, icon: '🚨', color: 'blue' },
+          { title: 'Approved Today', value: approvedTodayCount, icon: '✅', color: 'green' }, 
+          { title: 'High Priority', value: submissions.filter(s => s.priority === 'high' && s.status !== 'approved' && s.status !== 'rejected').length, icon: '🔥', color: 'red' }
         ].map((stat, i) => (
           <div key={i} className="summary-card">
             <div>
@@ -94,7 +126,7 @@ const ApprovalPanel = () => {
                   </div>
 
                   {selectedSubmission === sub.id && (
-                    <div className="review-form-box">
+                    <div className="review-form-box fade-in">
                       <h5>Review & Decision</h5>
                       <div className="review-form-inputs">
                         <div>
@@ -103,7 +135,7 @@ const ApprovalPanel = () => {
                         </div>
                         <div className="comment-field">
                           <label>Review Comments</label>
-                          <textarea value={reviewComment} onChange={(e) => setReviewComment(e.target.value)} className="form-textarea" rows={3} placeholder="Add feedback..."/>
+                          <textarea value={reviewComment} onChange={(e) => setReviewComment(e.target.value)} className="form-textarea" rows={3} placeholder="Add feedback for the student..."/>
                         </div>
                       </div>
                     </div>

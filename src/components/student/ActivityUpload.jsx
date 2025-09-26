@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ActivityUpload.css'; 
+import './ActivityUpload.css'; // Import the new CSS file
 
 const ActivityUpload = () => {
   const [formData, setFormData] = useState({
