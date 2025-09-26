@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './StudentDashboard.css'; // Import the new CSS file
+import './StudentDashboard.css'; 
 
-// Assuming these components are also styled with CSS
+
 import NavBar from './shared/NavBar';
 import AcademicProgress from './student/AcademicProgress';
 import ActivityUpload from './student/ActivityUpload';
@@ -15,7 +15,7 @@ const StudentDashboard = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
 
-  // Helper object to map colors to CSS gradients and hex codes
+  
   const colorMap = {
     blue: { gradient: 'linear-gradient(to right, #60a5fa, #3b82f6)', color: '#2563eb' },
     green: { gradient: 'linear-gradient(to right, #4ade80, #22c55e)', color: '#16a34a' },

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './AdminDashboard.css'; // Import the new CSS file
+import './AdminDashboard.css'; 
 
-// Assuming these child components are also styled with CSS
+
 import NavBar from './shared/NavBar';
 import UserManagement from './admin/UserManagement';
 import ActivityOverview from './admin/ActivityOverview';
@@ -25,7 +25,7 @@ const AdminDashboard = () => {
     { id: 'policy', label: 'Policy Monitoring', icon: '⚖️' }
   ];
 
-  // Helper object for dynamic colors
+  
   const colorConfig = {
     blue: { color: '#2563eb', bg: '#dbeafe' },
     green: { color: '#16a34a', bg: '#dcfce7' },
@@ -52,8 +52,8 @@ const AdminDashboard = () => {
                 { title: 'Faculty Members', value: '284', icon: 'purple', change: '+3%' },
                 { title: 'Activities This Month', value: '1,923', icon: '📊', color: 'orange', change: '+24%' }
               ].map((stat, index) => {
-                // **FIX APPLIED HERE**
-                // Provide a safe fallback to the 'gray' style if a color is not found.
+                
+                
                 const colorStyle = colorConfig[stat.color] || colorConfig.gray;
 
                 return (

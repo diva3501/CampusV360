@@ -1,5 +1,5 @@
 import React from 'react';
-import './AcademicProgress.css'; // Import the new CSS file
+import './AcademicProgress.css'; 
 
 const AcademicProgress = () => {
   const semesterData = [
@@ -25,7 +25,7 @@ const AcademicProgress = () => {
     { subject: 'Web Development', attended: 49, total: 50, percentage: 98 }
   ];
 
-  // Helper object for summary card colors
+  
   const summaryColors = {
     blue: '#2563eb',
     green: '#16a34a',
@@ -33,7 +33,7 @@ const AcademicProgress = () => {
     orange: '#ea580c',
   };
 
-  // Helper function to get class names for attendance based on percentage
+  
   const getAttendanceClass = (percentage) => {
     if (percentage >= 90) return 'attendance-high';
     if (percentage >= 75) return 'attendance-medium';

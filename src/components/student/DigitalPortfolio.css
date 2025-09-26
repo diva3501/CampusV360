@@ -1,4 +1,4 @@
-/* Main Layout & General Styles */
+
 .portfolio-container {
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@ h3 { font-size: 18px; font-weight: 600; color: #212529; margin: 0; }
 h4 { font-size: 16px; font-weight: 600; color: #212529; margin: 0 0 16px 0; }
 p { color: #6c757d; margin: 4px 0 0 0; }
 
-/* Generator View Styles */
+
 .generator-header { text-align: center; margin-bottom: 32px; }
 .portfolio-preview-box {
   border: 2px dashed #d1d5db;
@@ -99,7 +99,7 @@ p { color: #6c757d; margin: 4px 0 0 0; }
 }
 .generate-button:hover { background: linear-gradient(to right, #2563eb, #7e22ce); }
 
-/* Options Grid */
+
 .options-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -131,7 +131,7 @@ p { color: #6c757d; margin: 4px 0 0 0; }
 .option-icon--blue { background-color: #dbeafe; }
 .option-icon--indigo { background-color: #e0e7ff; }
 
-/* Success View Styles */
+
 .success-header { text-align: center; margin-bottom: 32px; }
 .success-icon {
   width: 64px;
@@ -167,7 +167,7 @@ p { color: #6c757d; margin: 4px 0 0 0; }
   gap: 16px;
 }
 
-/* Button Styles */
+
 .button {
   padding: 12px 24px;
   border-radius: 8px;
@@ -188,14 +188,14 @@ p { color: #6c757d; margin: 4px 0 0 0; }
 }
 .button--secondary:hover { background-color: #f9fafb; }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .preview-grid, .options-grid, .info-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* Animation */
+
 .fade-in {
   animation: fadeIn 0.5s ease-in-out;
 }

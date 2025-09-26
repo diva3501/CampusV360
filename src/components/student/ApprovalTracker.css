@@ -1,4 +1,4 @@
-/* Main Layout & General Styles */
+
 .tracker-container {
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@
   margin: 0;
 }
 
-/* Summary Cards */
+
 .summary-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -45,9 +45,9 @@
 .summary-label { font-size: 14px; font-weight: 500; color: #6c757d; margin: 0; }
 .summary-value { font-size: 24px; font-weight: 700; margin: 4px 0 0 0; }
 
-/* Table Styles */
+
 .table-wrapper {
-  overflow-x: auto; /* Ensures table is scrollable on small screens */
+  overflow-x: auto;
 }
 .submissions-table {
   width: 100%;
@@ -81,7 +81,7 @@
 .activity-comment { font-size: 12px; color: #6c757d; margin-top: 4px; }
 .reviewer-date { font-size: 12px; color: #adb5bd; }
 
-/* Status Badge */
+
 .status-badge {
   display: inline-flex;
   align-items: center;
@@ -97,7 +97,7 @@
 .status--pending { background-color: #fef9c3; color: #854d0e; }
 .status--under-review { background-color: #dbeafe; color: #1e40af; }
 
-/* Credits & Actions */
+
 .credits { font-weight: 500; color: #6c757d; }
 .credits--approved { color: #16a34a; }
 .action-buttons { display: flex; gap: 8px; }
@@ -114,7 +114,7 @@
 .action-button--resubmit { color: #16a34a; }
 .action-button--resubmit:hover { color: #14532d; }
 
-/* Timeline */
+
 .timeline-container {
   padding: 24px;
   display: flex;
@@ -147,13 +147,13 @@
 .timeline-status { font-size: 14px; color: #6c757d; margin: 2px 0; }
 .timeline-comment { font-size: 12px; color: #adb5bd; margin-top: 4px; }
 
-/* Responsive Design */
+
 @media (max-width: 1024px) {
   .summary-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 768px) {
   .summary-grid { grid-template-columns: repeat(2, 1fr); }
-  .submissions-table thead { display: none; } /* Hide table header */
+  .submissions-table thead { display: none; }
   .submissions-table, .submissions-table tbody, .submissions-table tr, .submissions-table td {
     display: block;
     width: 100%;
@@ -184,7 +184,7 @@
   .summary-grid { grid-template-columns: 1fr; }
 }
 
-/* Animation */
+
 .fade-in {
   animation: fadeIn 0.5s ease-in-out;
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ApprovalTracker.css'; // Import the new CSS file
+import './ApprovalTracker.css'; 
 
 const ApprovalTracker = () => {
   const [submissions] = useState([
@@ -10,7 +10,7 @@ const ApprovalTracker = () => {
     { id: 5, title: 'Volunteer Work - NGO Project', type: 'Volunteer', submittedDate: '2025-08-12', status: 'approved', reviewedBy: 'Dr. Davis', reviewDate: '2025-08-14', credits: 2, comments: 'Great community service contribution.' }
   ]);
   
-  // Returns a CSS modifier class for styling based on status
+  
   const getStatusClass = (status) => {
     return `status--${status.replace('_', '-')}`;
   };

@@ -1,4 +1,4 @@
-/* Main Layout & General Styles */
+
 .admin-dashboard-container {
   min-height: 100vh;
   background-color: #f9fafb;
@@ -22,7 +22,7 @@
   margin: 0 0 24px 0;
 }
 
-/* Tabs */
+
 .tabs-container {
   display: flex;
   overflow-x: auto;
@@ -56,7 +56,7 @@
   background-color: #f3e8ff;
 }
 
-/* Grids */
+
 .summary-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -75,7 +75,7 @@
   gap: 24px;
 }
 
-/* Summary Cards */
+
 .summary-card {
   background-color: #ffffff;
   border-radius: 12px;
@@ -106,7 +106,7 @@
 .summary-title { font-size: 14px; font-weight: 500; color: #6c757d; margin: 0; }
 .summary-value { font-size: 32px; font-weight: 700; margin-top: 4px; }
 
-/* System Activity List */
+
 .activity-list { display: flex; flex-direction: column; gap: 16px; }
 .activity-item {
   display: flex;
@@ -128,7 +128,7 @@
 .activity-action { font-weight: 500; color: #212529; margin: 0; }
 .activity-meta { font-size: 14px; color: #6c757d; margin-top: 2px; }
 
-/* Quick Actions */
+
 .quick-actions-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -152,7 +152,7 @@
 .button--purple { background-color: #a855f7; }
 .button--gray { background-color: #6b7280; }
 
-/* Performance Section */
+
 .performance-item { text-align: center; }
 .performance-icon {
   width: 80px;
@@ -168,7 +168,7 @@
 .performance-value { font-size: 28px; font-weight: 700; margin: 8px 0; }
 .performance-label { font-size: 14px; color: #6c757d; margin: 0; }
 
-/* Responsive */
+
 @media (max-width: 1024px) {
   .summary-grid, .main-grid { grid-template-columns: repeat(2, 1fr); }
   .performance-grid { grid-template-columns: 1fr; }
@@ -180,7 +180,7 @@
   .summary-grid { grid-template-columns: 1fr; }
 }
 
-/* Animation */
+
 .fade-in {
   animation: fadeIn 0.5s ease-in-out;
 }

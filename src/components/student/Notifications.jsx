@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './Notifications.css'; // Import the new CSS file
+import './Notifications.css'; 
 
 const Notifications = () => {
-  // Hardcoded dates are updated to be relative to the current date for relevance.
+  
   const today = new Date();
   const yesterday = new Date(today);
   yesterday.setDate(yesterday.getDate() - 1);
@@ -16,20 +16,20 @@ const Notifications = () => {
     { id: 4, type: 'info', title: 'New Activity Category', message: 'New activity category "Community Service" has been added.', date: twoDaysAgo.toLocaleDateString(), time: '11:45 AM', read: true, priority: 'low' },
   ]);
 
-  const getNotificationIcon = (type) => { /* ... same as before ... */ };
+  const getNotificationIcon = (type) => { };
 
-  // Returns a CSS modifier class based on priority and type
+  
   const getNotificationClass = (type, priority) => {
     if (priority === 'high') return 'notification-item--priority-high';
     return `notification-item--${type}`;
   };
 
-  // Returns a CSS modifier class for the priority badge
+  
   const getPriorityBadgeClass = (priority) => `priority-badge--${priority}`;
 
   const unreadCount = notifications.filter(n => !n.read).length;
   const todayNotifications = notifications.filter(n => n.date === today.toLocaleDateString());
-  const weekNotifications = notifications.length; // Simplified for example
+  const weekNotifications = notifications.length; 
 
   const summaryCardConfig = {
     blue: { color: '#2563eb', bg: '#dbeafe' },

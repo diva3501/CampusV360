@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import './DigitalPortfolio.css'; // Import the new CSS file
+import './DigitalPortfolio.css'; 
 
 const DigitalPortfolio = () => {
   const [portfolioGenerated, setPortfolioGenerated] = useState(false);
 
-  // NOTE: In a real app, this data would come from props or a global state.
+  
   const studentData = { name: 'John Doe', rollNumber: 'CS21B001', branch: 'Computer Science', year: 'Final Year', gpa: '8.7' };
   const approvedActivities = [
     { title: 'Machine Learning Certification', type: 'Certification', date: '2025-01-15', credits: 3, institution: 'Coursera' },
@@ -24,8 +24,8 @@ const DigitalPortfolio = () => {
   };
 
   const downloadPortfolio = () => {
-    const portfolioContent = `...`; // Same download logic
-    // ... same download logic as before
+    const portfolioContent = `...`; 
+    
     alert('Downloading portfolio as a text file...');
   };
 

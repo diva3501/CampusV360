@@ -1,4 +1,4 @@
-/* General Styles & Variables */
+
 :root {
   --primary-color: #3b82f6;
   --light-gray-bg: #f8f9fa;
@@ -17,7 +17,7 @@ body {
   color: var(--text-primary);
 }
 
-/* Main Dashboard Layout */
+
 .dashboard-container {
   min-height: 100vh;
 }
@@ -28,7 +28,7 @@ body {
   padding: 24px;
 }
 
-/* Tabs Navigation */
+
 .tabs-container {
   display: flex;
   overflow-x: auto;
@@ -70,7 +70,7 @@ body {
   background-color: #e7f5ff;
 }
 
-/* Grid Layout */
+
 .grid-container {
   display: grid;
   gap: 24px;
@@ -81,7 +81,7 @@ body {
 .four-cols { grid-template-columns: repeat(4, 1fr); }
 
 
-/* Cards */
+
 .card {
   background-color: var(--card-bg);
   border-radius: var(--border-radius);
@@ -113,7 +113,7 @@ body {
   margin-top: 24px;
 }
 
-/* Welcome Banner */
+
 .welcome-banner {
   background: linear-gradient(to right, #4dabf7, #a569f6);
   color: white;
@@ -142,7 +142,7 @@ body {
   opacity: 0.2;
 }
 
-/* Stats Cards */
+
 .stat-card-header {
   display: flex;
   justify-content: space-between;
@@ -174,7 +174,7 @@ body {
   color: var(--text-secondary);
 }
 
-/* Recent Activities */
+
 .activity-list {
   display: flex;
   flex-direction: column;
@@ -227,7 +227,7 @@ body {
   font-weight: 500;
 }
 
-/* Status Colors */
+
 .status-approved { background-color: #d1fae5; color: #065f46; }
 .status-pending { background-color: #fef9c3; color: #854d0e; }
 .status-under-review { background-color: #dbeafe; color: #1e40af; }
@@ -236,7 +236,7 @@ body {
 .status-dot.status-pending { background-color: #f59e0b; }
 .status-dot.status-under-review { background-color: #3b82f6; }
 
-/* Quick Actions */
+
 .quick-actions-list {
   display: flex;
   flex-direction: column;
@@ -273,7 +273,7 @@ body {
   opacity: 0.9;
 }
 
-/* Progress Overview */
+
 .progress-item {
   text-align: center;
 }
@@ -311,7 +311,7 @@ body {
   border-radius: 4px;
 }
 
-/* Helper & Animation Classes */
+
 .link-button {
   background: none;
   border: none;
@@ -331,7 +331,7 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Design */
+
 @media (max-width: 1024px) {
   .four-cols { grid-template-columns: repeat(2, 1fr); }
 }
