@@ -1,0 +1,73 @@
+
+.credit-awarding-container { display: flex; flex-direction: column; gap: 24px; }
+.card { background-color: #fff; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #e9ecef; }
+.card-header { padding: 24px; font-size: 20px; font-weight: 600; }
+.card-header-row { padding: 24px; border-bottom: 1px solid #e9ecef; display: flex; justify-content: space-between; align-items: center; }
+.card-header-row h3 { margin: 0; font-size: 20px; font-weight: 600; }
+.list-container { padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+
+
+.summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.presets-grid { padding: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+
+.summary-card { padding: 24px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e9ecef; }
+.summary-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.summary-icon span { font-size: 24px; }
+.summary-title { font-size: 14px; font-weight: 500; color: #6c757d; margin: 0; }
+.summary-value { font-size: 32px; font-weight: 700; }
+
+
+.awarding-form { padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+.form-label { display: block; font-size: 14px; font-weight: 500; color: #4b5563; margin-bottom: 8px; }
+.required { color: #ef4444; }
+.form-control { width: 100%; padding: 12px; border: 1px solid #ced4da; border-radius: 8px; font-size: 16px; box-sizing: border-box; }
+.form-control:focus { outline: none; border-color: #22c55e; box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.guideline-box { padding: 16px; background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; }
+.guideline-box h4 { margin: 0 0 8px 0; font-size: 14px; color: #1e3a8a; }
+.guideline-box ul { list-style: none; margin: 0; padding: 0; font-size: 12px; color: #1e40af; display: flex; flex-direction: column; gap: 4px; }
+.form-actions { display: flex; gap: 12px; }
+
+
+.button { padding: 12px 24px; border-radius: 8px; font-weight: 500; border: none; cursor: pointer; transition: all 0.2s; }
+.button--primary { background-color: #22c55e; color: white; flex: 1; }
+.button--primary:hover { background-color: #16a34a; }
+.button--secondary { background-color: #f8f9fa; color: #495057; border: 1px solid #dee2e6; }
+.button--secondary:hover { background-color: #e9ecef; }
+.button--blue { background-color: #3b82f6; color: white; font-size: 14px; padding: 8px 16px; }
+.button--blue:hover { background-color: #2563eb; }
+.link-button { background: none; border: none; font-size: 14px; color: #3b82f6; cursor: pointer; font-weight: 500; }
+
+
+.award-item { padding: 16px; border: 1px solid #e9ecef; border-radius: 8px; }
+.award-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+.award-header h4 { margin: 0; font-weight: 500; }
+.award-header p { margin: 2px 0 0 0; font-size: 14px; color: #6c757d; }
+.award-amount { text-align: right; }
+.award-amount span { font-size: 20px; font-weight: 700; color: #16a34a; }
+.award-amount p { margin: 0; font-size: 12px; color: #adb5bd; }
+.award-reason { font-size: 14px; margin-bottom: 8px; }
+.award-footer { display: flex; justify-content: space-between; font-size: 12px; color: #adb5bd; }
+.view-all-container { text-align: center; margin-top: 16px; }
+
+
+.preset-button { background: #fff; border: 2px dashed #d1d5db; padding: 16px; border-radius: 8px; text-align: center; cursor: pointer; transition: all 0.2s ease; }
+.preset-button:hover { border-color: #4ade80; background-color: #f0fdf4; }
+.preset-icon { font-size: 24px; margin-bottom: 8px; }
+.preset-button h4 { margin: 0; font-weight: 500; }
+.preset-button p { font-size: 12px; color: #6c757d; margin: 2px 0 8px 0; }
+.preset-badge { background-color: #dcfce7; color: #166534; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 500; }
+
+
+@media (max-width: 1024px) {
+  .summary-grid, .presets-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .main-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .summary-grid, .presets-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
