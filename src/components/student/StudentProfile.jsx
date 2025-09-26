@@ -11,11 +11,11 @@ const Icon = ({ path, className = '' }) => (
 const StudentProfile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [profileData, setProfileData] = useState({
-    personalInfo: { firstName: 'John', lastName: 'Doe', email: 'john.doe@university.edu', phone: '+91 9876543210', dateOfBirth: '2003-05-15', address: '123 University Street, Chennai, TN' },
+    personalInfo: { firstName: 'Adithya', lastName: 'Sharma', email: 'adhithyasharma@university.edu', phone: '+91 9876543210', dateOfBirth: '2003-05-15', address: '123 University Street, Chennai, TN' },
     academicInfo: { rollNumber: 'CS21B001', program: 'Bachelor of Technology', branch: 'Computer Science', batch: '2021-2025', currentSemester: '7', cgpa: '8.7' },
     interests: ['Machine Learning', 'Web Development', 'Data Science', 'Cloud Computing', 'UI/UX Design'],
     achievements: ['Dean\'s List - Semester 3, 5', 'Best Project Award - Semester 4', 'Hackathon Winner - TechFest \'24', 'Published Research Paper in IEEE'],
-    socialProfiles: { linkedin: 'https://linkedin.com/in/johndoe', github: 'https://github.com/johndoe', portfolio: 'https://johndoe.dev' }
+    socialProfiles: { linkedin: 'https://linkedin.com/in/Adithyasharma2005', github: 'https://github.com/Adithyasharma2005', portfolio: 'https://adhi2005.dev' }
   });
 
   const handleInputChange = (section, field, value) => {

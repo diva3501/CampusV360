@@ -5,7 +5,7 @@ import './DigitalPortfolio.css';
 
 const DigitalPortfolio = () => {
   // Static data for the demo portfolio
-  const studentData = { name: 'John Doe', rollNumber: 'CS21B001', branch: 'Computer Science', year: 'Final Year', gpa: '8.7' };
+  const studentData = { name: 'Adithya Sharma', rollNumber: 'CS21B001', branch: 'Computer Science', year: 'Final Year', gpa: '8.7' };
   const approvedActivities = [
     { title: 'Machine Learning Certification', type: 'Certification', date: '2025-01-15', credits: 3, institution: 'Coursera' },
     { title: 'Industry Internship', type: 'Internship', date: '2025-06-20', credits: 4, institution: 'Google Inc.' },

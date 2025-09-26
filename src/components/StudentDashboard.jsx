@@ -53,7 +53,7 @@ const StudentDashboard = () => {
             {/* Welcome Section */}
             <div className="welcome-banner">
               <div>
-                <h2>Welcome back, John! 👋</h2>
+                <h2>Welcome back, Adithya Sharma! 👋</h2>
                 <p>Ready to track your academic journey?</p>
               </div>
               <div className="welcome-icon">🎓</div>
